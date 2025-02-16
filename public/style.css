@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Protest+Revolution&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sixtyfour&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Honk&display=swap');
+
+body{
+    background-color: rgba(84, 224, 248, 0.534);
+}
+h1{
+    margin: 0;
+}
+form{
+    margin-left: 5px;
+    margin-right: 10px;
+}
+#Center{
+    font-family: 'Honk', system-ui;
+    font-size: 17px;
+    height: 610px;
+    margin: 15px;
+    border: 3px solid rgb(40, 102, 236);
+    background: rgb(40, 102, 236);
+    text-shadow: 2px 2px 11px black;
+    box-shadow: -2px 3px 19px 6px rgb(0 0 0);
+    border-radius: 35px;
+}
+input{
+    font-family: 'Sixtyfour', sans-serif;
+    font-size: 15px;
+    color:rgb(8, 216, 171);
+}
+
+
+@media screen and (max-width: 385px) {
+    #Center { 
+        height: 720px;
+    }
+  }
+@media screen and (max-width: 310px) {
+    #Center { 
+        height: 780px;
+    }
+  }
+  @media screen and (max-width: 293px) {
+    #Center { 
+        height: 830px;
+        }
+  }
+  @media screen and (max-width: 208px) {
+    #Center { 
+        height: 950px;
+        }
+  }

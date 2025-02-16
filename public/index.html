@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Authentification</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="javascript.js"></script>
+</head>
+<body>
+    <div id="Center">
+
+        <div id="message"></div>
+    <h1 style="width: auto;"><center>Créer votre compte :</center></h1>
+    <form id="creation">
+
+        <h2 style="width: 100%;">Entrez un nom d'utilisateur :</h2>
+        <input id="userCreation" type="text" name="Username" placeholder="Nom d'utilisateur" style="width: 100%;">
+        <h2  style="width: 100%;">Entrez un mot de passe :</h2 >
+        <input id="mdpCreation" type="password" name="Password" placeholder="Mot de passe" style="width: 100%;">
+        <br>
+        <br>
+        <center><input type="submit"></center>
+        <br> 
+        <br>
+
+    </form>
+    <h1 style="width: auto;"><center>Vous connecter :</center></h1>
+    <form id="connexion">
+        <h2 style="width: 100%;">Entrez le nom d'utilisateur :</h2>
+        <input id="userConnexion" type="text" name="Username2" placeholder="Nom d'utilisateur" style="width: 100%;">
+        <h2  style="width: 100%;">Entrez le mot de passe :</h2>
+        <input id="mdpConnexion" type="password" name="Password2" placeholder="Mot de passe" style="width: 100%;">
+        <br>
+        <br>
+        <center><input type="submit"></center>
+        
+    </form>
+    </div>
+</body>
+
+</html>

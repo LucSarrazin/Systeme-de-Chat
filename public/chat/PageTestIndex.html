@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat en direct</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="JavaScript.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="chat-container">
+    <h1 id="WelcomeText">Bienvenue</h1>
+    <div class="chat-box" id="messages"></div>
+    <form id="chat-form">
+        <input id="Username" type="text" placeholder="Username" disabled>
+        <input id="msg" type="text" placeholder="Entrez votre message...">
+        <button type="submit">Envoyer</button>
+    </form>
+</div>
+</body>
+<script src="htmlChanger.js"></script>
+</html>

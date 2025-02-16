@@ -1,0 +1,82 @@
+
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.chat-container {
+    width: 800px;
+    background: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+}
+#Messages{
+    margin-bottom: 30px;
+}
+.chat-box {
+    height: 300px;
+    overflow-y: auto;
+    background: #2a2a2a;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+input, button {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 5px;
+    background: #333;
+    color: white;
+}
+button {
+    background: #6200ea;
+    cursor: pointer;
+}
+button:hover {
+    background: #3700b3;
+}
+
+
+.bot-message, .candidate-message {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+.bot-message{
+    background: #fff280;
+    color: #333;
+}
+.candidate-message {
+    background: #7bebff;
+    color: #fff;
+}
+
+.bot-message img {
+    width: 40px; /* Largeur de l'image du bot */
+    height: 40px; /* Hauteur de l'image du bot */
+    margin-right: 10px; /* Espacement à droite de l'image du bot */
+    border-radius: 50%; /* Arrondir l'image */
+}
+
+.candidate-message img {
+    width: 40px; /* Largeur de l'image de l'utilisateur */
+    height: 40px; /* Hauteur de l'image de l'utilisateur */
+    margin-left: 10px; /* Espacement à gauche de l'image de l'utilisateur */
+    border-radius: 50%; /* Arrondir l'image */
+    order: 1; /* Assurez-vous que l'image est à droite du texte */
+}
+
+.candidate-message {
+    justify-content: flex-end; /* Aligner le message de l'utilisateur à droite */
+}
+

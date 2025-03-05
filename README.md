@@ -105,5 +105,5 @@ Les contributions sont les bienvenues ! 🎉
 
 📌 Ce projet est un projet personnel éducatif et ne doit pas être utilisé à des fins commerciales.  
 
-🚀 *Bon développement et amusez-vous avec votre système de messagerie !* 🎉  
+🚀 *amusez-vous bien avec mon système de messagerie !* 🎉  
 

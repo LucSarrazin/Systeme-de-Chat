@@ -1,5 +1,6 @@
 const bcrypt = require("bcrypt");
 const UserModel = require("../models/UserModel");
+const index = import("../index.js");
 
 class AuthController {
     static register(socket, user) {
@@ -40,6 +41,7 @@ class AuthController {
 
                 if (match) {
                     console.log("Connexion réussie !");
+                    index.connected = true;
                     socket.emit("connexion", user.username);
                 } else {
                     console.error("Mot de passe incorrect !");

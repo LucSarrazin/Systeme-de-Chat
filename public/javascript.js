@@ -1,6 +1,9 @@
 
 $(function (){
     const socket = io();
+
+
+
     $("#creation").submit(function (e){
         e.preventDefault();
         socket.emit("creation", {

@@ -27,6 +27,21 @@ class ChatController {
             socket.emit("loadMessage", messages);
         });
     }
+
+    static modifyMessages(socket, msg) {
+        console.log("Message reçu :", msg);
+
+        const date = new Date().toISOString().slice(0, 19).replace("T", " ");
+
+        MessageModel.changeMessage(msg.username, msg.message, date, (err, result) => {
+            if (err) return console.error("Erreur d'enregistrement :", err);
+
+            console.log("Message sauvegardé !");
+            ChatController.io.emit("chat message", msg); // Utilisation de io.emit
+        });
+    }
+
 }
+
 
 module.exports = ChatController;

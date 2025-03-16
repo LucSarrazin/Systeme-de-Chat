@@ -8,11 +8,20 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="JavaScript.js"></script>
     <link rel="stylesheet" href="styles.css">
-</head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet"></head>
 <body>
+<button id="showUser" onclick="change()"><span class="material-icons">&#xe7fd;</span></button>
+<div class="user-container" id="user-container">
+    <h3>Utilisateur connectées : </h3>
+    <div class="user-connected"></div>
+    <button id="deconnecter" style="background-color: darkred"><span class="material-icons">&#xe9ba;</span></button>
+</div>
+
 <div class="chat-container">
     <h1 id="WelcomeText">Bienvenue</h1>
     <div class="chat-box" id="messages"></div>
+    <input id="typing" type="text" disabled>
     <form id="chat-form">
         <input id="Username" type="text" placeholder="Username" disabled>
         <input id="msg" type="text" placeholder="Entrez votre message...">

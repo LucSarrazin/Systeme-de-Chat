@@ -56,7 +56,7 @@ Avant de commencer, assurez-vous d'avoir installé :
 
 1️⃣ **Clonez le dépôt**  
 ```bash
-git clone https://github.com/LucSarrazin/Systeme-de-messagerie.git
+git clone https://github.com/LucSarrazin/Systeme-de-Chat.git
 cd Systeme-de-messagerie
 ```
 
@@ -67,7 +67,7 @@ npm install
 
 3️⃣ **Configurez la base de données**  
 - Importez le fichier `database.sql` dans MySQL.  
-- Modifiez `config.js` avec vos identifiants de base de données.  
+- Modifiez `config/database.js` avec vos identifiants de base de données.  
 
 4️⃣ **Lancez le serveur**  
 ```bash

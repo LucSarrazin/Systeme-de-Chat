@@ -45,7 +45,7 @@ L'objectif de ce projet est de proposer un **chat fluide et réactif**, sans uti
 
 - **💻 Backend** : Node.js (V.23.8.0), Socket.io (V.4.8.1)  
 - **🗄️ Base de données** : MySQL (V.8.0.38)  
-- **🎨 Frontend** : HTML 5, CSS 2, JavaScript 13  
+- **🎨 Frontend** : HTML 5, CSS 2, JavaScript ES14  
 - **🔐 Sécurité** : Bcrypt (V.5.1.1) pour le hachage des mots de passe  
 
 ---

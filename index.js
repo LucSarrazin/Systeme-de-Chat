@@ -64,7 +64,7 @@ io.on("connection", (socket) => {
     });
     socket.on("chat message", (msg) => ChatController.sendMessage(socket, msg));
     socket.on("loadMessage", () => ChatController.loadMessages(socket));
-    socket.on("modifier", () => ChatController.modifyMessages(socket, msg));
+    socket.on("modifier", (msg) => ChatController.modifyMessages(socket, msg));
 });
 
 server.listen(3000, () => console.log("🚀 Serveur lancé sur http://localhost:3000"));

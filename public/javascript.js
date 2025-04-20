@@ -13,11 +13,6 @@ $(function (){
         $("#userCreation","#mdpCreation").val("");
         return false;
     });
-    socket.on('creation', function (user) {
-        $("#message").append($("<p>").text(user.username))
-        $("#message").append($("<p>").text(user.mdp))
-
-    })
 
     $("#connexion").submit(function (e){
         e.preventDefault();
@@ -32,5 +27,28 @@ $(function (){
         window.location.assign(`/chat/${user}`);
 
     })
+
+    // Création
+    socket.on("registerError", function (message) {
+        $("#creation .feedback").text(message).css("color", "red");
+    });
+
+    socket.on("registerSuccess", function (message,user) {
+        $("#creation .feedback").text(message).css("color", "green");
+        socket.emit("connexion", {
+            username:  user.username,
+            mdp:  user.mdp
+        });
+    });
+    socket.on('connexion', function (user) {
+        window.location.assign(`/chat/${user}`);
+
+    })
+
+// Connexion
+    socket.on("loginError", function (message) {
+        $("#connexion .feedback").text(message).css("color", "red");
+    });
+
 
 });

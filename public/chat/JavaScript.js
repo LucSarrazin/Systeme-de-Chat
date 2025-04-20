@@ -3,6 +3,7 @@ const socket = io();
 let meSending = false;
 let id;
 
+
 $(function (){
 
 
@@ -11,8 +12,12 @@ $(function (){
         socket.emit("loadMessage");
         socket.emit("Utilisateur Connecté", (username));
         socket.on('loadMessage', function (msg) {
+            if (!msg || Object.keys(msg).length === 0){
+                $("#messages").prepend($("<p id='Messages'>").text("Aucun message pour le moment "),$("#messages").prepend($("<br>").text("")));
+            }else{
+                msg.forEach((element) =>  $("#messages").prepend($("<p id='Messages'>").text("L'utilisateur " + element.Username +  " le " + generateDatabaseDateTime(element.Date) + " à dit : " + element.message)),$("#messages").prepend($("<br>").text("")));
+            }
 
-            msg.forEach((element) =>  $("#messages").prepend($("<p id='Messages'>").text("L'utilisateur " + element.Username +  " le " + generateDatabaseDateTime(element.Date) + " à dit : " + element.message)),$("#messages").prepend($("<br>").text("")));
 
 
             function generateDatabaseDateTime(dates) {
@@ -99,18 +104,44 @@ $(function (){
     });
 
     socket.on('chat message', function (msg) {
-        id = msg.id;
-        $("#messages").prepend(
-            $("<div style='display: flex; align-items: center;'>").append(
-                $("<p style='margin: 0; padding-right: 10px;'>").text("L'utilisateur " + msg.username + " à " + msg.date + " à dit : " + msg.message),
-                $("<button id='modifier' style='height:50px; width: 50px;'>").html("<span class='material-icons'>&#xf88d;</span>")
-            )
-        );
-        if(meSending === false){
-            play();
+        const messageDiv = $("<div style='display: flex; align-items: center;'>");
+        const messageText = $("<p style='margin: 0; padding-right: 10px;'>")
+            .attr("id", `msg-${msg.id}`)
+            .text("L'utilisateur " + msg.username + " à " + msg.date + " à dit : " + msg.message);
+
+        // Crée un bouton seulement si l'utilisateur connecté est l'auteur
+        if (msg.username === username) {
+            const modifierBtn = $("<button style='height:50px; width: 50px;'>")
+                .html("<span class='material-icons'>&#xf88d;</span>")
+                .on("click", function () {
+                    const currentText = messageText.text().split(" à dit : ")[1]; // Récupère le texte actuel affiché
+                    const newText = prompt("Modifier le message :", currentText);
+                    if (newText !== null) {
+                        socket.emit("modifier", {
+                            id: msg.id,
+                            username: msg.username,
+                            message: newText
+                        });
+                    }
+                });
+
+            messageDiv.append(messageText, modifierBtn);
+        } else {
+            messageDiv.append(messageText); // Pas de bouton
         }
+
+        $("#messages").prepend(messageDiv);
+
+        if (!meSending) play();
         meSending = false;
-    })
+    });
+    socket.on('message modified', function (msg) {
+        const messageP = $(`#msg-${msg.id}`);
+        messageP.text("L'utilisateur " + msg.username + " à " + msg.date + " à dit : " + msg.message);
+    });
+    socket.on("modification refusée", (msg) => {
+        alert(msg); // ou affiche-le joliment
+    });
 
 
     $("#messages").on("click", "#modifier", function() {
@@ -121,11 +152,6 @@ $(function (){
             date: new Date().toLocaleString()
         });
     });
-
-    socket.on('loadMessage', function (msg) {
-        $("#messages").prepend($("<p>").text("L'utilisateur " + msg.username +  " à " + msg.date + " à dit : " + msg.message))
-    })
-
 
     function play() {
         var audio = new Audio('https://cdn.pixabay.com/audio/2024/11/27/audio_c91ef5ee90.mp3');

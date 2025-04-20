@@ -101,3 +101,7 @@ button:hover {
     justify-content: flex-end; /* Aligner le message de l'utilisateur à droite */
 }
 
+#modifier{
+    height: 5% !important;
+    width: 5% !important;
+}

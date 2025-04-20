@@ -3,11 +3,11 @@
 ## 📜 Table des matières
 
 - [📖 Description](#-description)
+- [🖥️ Aperçu](#-aperçu)
 - [🚀 Fonctionnalités](#-fonctionnalités)
 - [🛠️ Technologies utilisées](#-technologies-utilisées)
 - [📌 Prérequis](#-prérequis)
 - [⚙️ Installation](#-installation)
-- [🖥️ Aperçu](#-aperçu)
 - [🤝 Contribution](#-contribution)
 - [📄 License](#-license)
 
@@ -16,9 +16,17 @@
 ## 📖 Description  
 
 Bienvenue dans le **Système de Messagerie en Temps Réel** ! 🚀  
-Ce projet est une plateforme de discussion permettant aux utilisateurs de communiquer instantanément via une interface moderne et intuitive. Il est conçu en **Node.js**, avec **Socket.io** pour la gestion du chat en temps réel, et une base de données **MySQL** pour stocker les utilisateurs et leurs messages.
+Ce projet est une plateforme de discussion permettant aux utilisateurs de communiquer instantanément via une interface moderne et intuitive. Il est conçu en **Node.js**, avec **Socket.io** pour la gestion du chat en temps réel, une base de données **MySQL** pour stocker les utilisateurs et leurs messages.
 
 L'objectif de ce projet est de proposer un **chat fluide et réactif**, sans utiliser de framework côté serveur, pour mettre en avant la puissance des WebSockets et des technologies de développement web modernes.
+
+---
+
+## 🖥️ Aperçu  
+
+✨ **Interface utilisateur en mode sombre**  
+📡 **Messages envoyés et reçus en temps réel**  
+🔐 **Connexion sécurisée des utilisateurs**  
 
 ---
 
@@ -35,10 +43,10 @@ L'objectif de ce projet est de proposer un **chat fluide et réactif**, sans uti
 
 ## 🛠️ Technologies utilisées  
 
-- **💻 Backend** : Node.js, Socket.io  
-- **🗄️ Base de données** : MySQL  
-- **🎨 Frontend** : HTML, CSS, JavaScript  
-- **🔐 Sécurité** : Bcrypt pour le hachage des mots de passe  
+- **💻 Backend** : Node.js (V.23.8.0), Socket.io (V.4.8.1)  
+- **🗄️ Base de données** : MySQL (V.8.0.38)  
+- **🎨 Frontend** : HTML 5, CSS 2, JavaScript ES14  
+- **🔐 Sécurité** : Bcrypt (V.5.1.1) pour le hachage des mots de passe  
 
 ---
 
@@ -56,7 +64,7 @@ Avant de commencer, assurez-vous d'avoir installé :
 
 1️⃣ **Clonez le dépôt**  
 ```bash
-git clone https://github.com/LucSarrazin/Systeme-de-messagerie.git
+git clone https://github.com/LucSarrazin/Systeme-de-Chat.git
 cd Systeme-de-messagerie
 ```
 
@@ -67,7 +75,7 @@ npm install
 
 3️⃣ **Configurez la base de données**  
 - Importez le fichier `database.sql` dans MySQL.  
-- Modifiez `config.js` avec vos identifiants de base de données.  
+- Modifiez `config/database.js` avec vos identifiants de base de données.  
 
 4️⃣ **Lancez le serveur**  
 ```bash
@@ -79,14 +87,6 @@ Ouvrez votre navigateur et allez sur :
 ```
 http://localhost:3000
 ```
-
----
-
-## 🖥️ Aperçu  
-
-✨ **Interface utilisateur en mode sombre**  
-📡 **Messages envoyés et reçus en temps réel**  
-🔐 **Connexion sécurisée des utilisateurs**  
 
 ---
 
